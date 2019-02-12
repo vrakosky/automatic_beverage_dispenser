@@ -1,0 +1,5 @@
+Vérification 1 : AGP2=>P2
+
+Vérification 2 : not(EXP1 and P2)
+
+Vérification 3 : AGP1=> P1UoneEuros

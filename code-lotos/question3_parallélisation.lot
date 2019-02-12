@@ -1,0 +1,38 @@
+System cofeemachine[vingtCts,oneEuros,cofee,tea,rendremoney,prendremoney,takecofee,raz] := 
+                     P1[vingtCts,oneEuros,cofee,tea,rendremoney,raz]
+                     |[vingtCts,oneEuros,cofee,raz]|
+                     P2[vingtCts,oneEuros,cofee,takecofee,prendremoney,raz]
+                   
+where
+Process P1[vingtCts,oneEuros,cofee,tea,rendremoney,raz]:=
+vingtCts;(oneEuros;(cofee;rendremoney;raz;P1[vingtCts,oneEuros,cofee,tea,rendremoney,raz]
+[]
+tea;rendremoney;raz;P1[vingtCts,oneEuros,cofee,tea,rendremoney,raz])
+[]
+vingtCts;vingtCts;(tea;raz; P1[vingtCts,oneEuros,cofee,tea,rendremoney,raz] 
+[] 
+vingtCts;vingtCts;(cofee;raz;P1[vingtCts,oneEuros,cofee,tea,rendremoney,raz]
+[]
+vingtCts;cofee;rendremoney;raz;P1[vingtCts,oneEuros,cofee,tea,rendremoney,raz])))
+[]
+oneEuros;(vingtCts;cofee;rendremoney;raz;P1[vingtCts,oneEuros,cofee,tea,rendremoney,raz]
+[]
+(tea;rendremoney;raz;P1[vingtCts,oneEuros,cofee,tea,rendremoney,raz]
+ [] cofee;raz;P1[vingtCts,oneEuros,cofee,tea,rendremoney,raz]) )
+endproc
+Process P2[vingtCts,oneEuros,cofee,takecofee,prendremoney,raz]:=
+
+vingtCts;(oneEuros;cofee;prendremoney;raz;P2[vingtCts,oneEuros,cofee,takecofee,prendremoney,raz]
+[]
+
+vingtCts;vingtCts;vingtCts;vingtCts;(
+vingtCts;cofee;prendremoney;raz;P2[vingtCts,oneEuros,cofee,takecofee,prendremoney,raz]
+[]
+cofee;takecofee;raz;P2[vingtCts,oneEuros,cofee,takecofee,prendremoney,raz] ) )
+[]
+oneEuros;(cofee;takecofee;raz;P2[vingtCts,oneEuros,cofee,takecofee,prendremoney,raz]
+[]
+vingtCts;cofee;takecofee;prendremoney;raz;P2[vingtCts,oneEuros,cofee,takecofee,prendremoney,raz])
+
+endproc
+endsys
